@@ -4,14 +4,32 @@
     box-sizing: border-box;
 }
 
+/*Hero sektion*/
 .hero {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
 }
 
 .hero img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#om-image {
+   transition: filter 0.3s ease;
+}
+
+#om-image:hover {
+   filter: sepia(1) 
+   hue-rotate(-50deg);
+   brightness(1.3)
 }
 
 .hero .overlay {
@@ -21,65 +39,78 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero .hero-text {
     position: absolute;
-    top: 13%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    text-align: center;
-    z-index: 2;
-    font-size: 1rem;
+    z-index: 3;
+    padding: 1rem;
 }
 
+/*Om sektion*/
 .Om-container {
-    position: relative;
-    text-align: center;
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    min-height: 400px;
 }
 
 .Om img {
-    width: 100%;
-    display: block;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .Om-text {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 40rem;
-    color: #3c1e28;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 0 1 rem;
-    z-index: 10;
+    width: 50%;
+    padding-top: 4rem;
+    padding-right: 2rem;
 }
+
+/* Media query för större skärmar*/
+@media (min-width: 768px) {
+    .Om-container {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
 
 .Om h2 {
 font-size: 2rem;
 color: #3c1e28;
-margin-bottom: 1.25rem
-};
+margin-top: 2rem;
+}
 
 .Om p {
 font-size: 1.125rem;
 color: #3c1e28;
 max-width: 37.5rem;
-margin: 0 auto;
+margin-top: 1rem;
 }
 
 
 
 
-
-
-
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #fcb9b0;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    padding: 1rem;
     color: #333;
+    text-align: center;
 }
